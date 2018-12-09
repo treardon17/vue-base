@@ -10,16 +10,27 @@
 
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import { Observer } from 'mobx-vue'
+import store from '@/state/site'
 import routes from '@/router/routes'
 
+@Observer
 @Component()
 class Navigation extends Vue {
   routes = routes.filter(route => route.navName != null).map(route => ({ title: route.navName, href: route.path }))
-  created () {}
-  mounted () {}
+
+  store = store
+
+  created() {}
+
+  mounted() {
+    // console.log('before:', JSON.stringify(this.store.backgroundColor))
+    this.store.changeBackgroundColor('#000')
+    console.log('after:', JSON.stringify(this.store.backgroundColor))
+  }
 
   // events
-  onLinkClick (e) {
+  onLinkClick(e) {
     e.preventDefault()
     const href = e.currentTarget.getAttribute('href')
     const isExternal = this.isExternalLink(href)
@@ -31,11 +42,12 @@ class Navigation extends Vue {
   }
 
   // helpers
-  isExternalLink (link) {
+  isExternalLink(link) {
     return link && (/https?:.*/gi.exec(link) != null)
   }
 }
 export default Navigation
+
 </script>
 
 <style scoped lang="scss">

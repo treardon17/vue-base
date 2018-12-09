@@ -1,23 +1,23 @@
-import { action, computed, observable } from 'mobx'
+import {
+  action,
+  computed,
+  observable
+} from 'mobx'
 
-export default class SiteState {
+class SiteState {
   // observables
-  @observable routes = []
-
-  // setup
-  constructor () {
-    this.setDefaults()
-  }
-
-  setDefaults () {
-  }
+  @observable backgroundColor = '#fff'
 
   // getters
-  @computed get computedAge() {
-      return this.age + 1
+  @computed get computedValue() {
+    return 'COMPUTED'
   }
 
-  @action.bound setAge() {
-      this.age++
+  // actions
+  @action.bound changeBackgroundColor(color) {
+    this.backgroundColor = color
+    console.log('changing background color to:', color)
   }
 }
+
+export default new SiteState()

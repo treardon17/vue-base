@@ -4,7 +4,8 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "legacyDecorators": true
+      "jsx": true,
+      "modules": true
     }
   }
 }

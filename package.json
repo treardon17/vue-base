@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "mobx": "^5.7.0",
@@ -17,9 +17,11 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.1",
     "@vue/cli-service": "^3.2.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "babel-preset-mobx": "^2.0.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "jest": "^23.6.0",
@@ -38,9 +40,20 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/airbnb"
     ],
-    "rules": {},
+    "rules": {
+      "semi": [2, "never"],
+      "comma-dangle": 0,
+      "no-console": 0,
+      "no-unused-expressions": 0,
+      "max-len": 0,
+      "object-curly-newline": 0,
+      "class-methods-use-this": 0,
+      "no-nested-ternary": 0,
+      "no-return-assign": 0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

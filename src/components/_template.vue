@@ -8,8 +8,9 @@ import Component from 'vue-class-component'
 
 @Component
 class Template extends Vue {
-  created () { }
-  mounted () { }
+  created() { }
+
+  mounted() { }
 }
 export default Template
 </script>
