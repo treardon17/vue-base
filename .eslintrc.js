@@ -18,7 +18,8 @@ module.exports = {
     "class-methods-use-this": 0,
     "no-nested-ternary": 0,
     "no-return-assign": 0,
-    "import/extensions": 0
+    "import/extensions": 0,
+    "lines-between-class-members": 0
   },
   "parserOptions": {
     "parser": "babel-eslint"

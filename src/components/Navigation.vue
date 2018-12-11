@@ -18,16 +18,11 @@ import routes from '@/router/routes'
 @Component()
 class Navigation extends Vue {
   routes = routes.filter(route => route.navName != null).map(route => ({ title: route.navName, href: route.path }))
-
   store = store
 
   created() {}
 
-  mounted() {
-    // console.log('before:', JSON.stringify(this.store.backgroundColor))
-    this.store.changeBackgroundColor('#000')
-    console.log('after:', JSON.stringify(this.store.backgroundColor))
-  }
+  mounted() {}
 
   // events
   onLinkClick(e) {

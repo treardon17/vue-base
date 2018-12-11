@@ -1,8 +1,4 @@
-import {
-  action,
-  computed,
-  observable
-} from 'mobx'
+import { action, computed, observable } from 'mobx'
 
 class SiteState {
   // observables
